@@ -17,3 +17,13 @@ Unidirectional data flow (Top to Bottom)
 # Main react keyword
 State, Props, JSX, VirtualDOM, Components, Declarative
 
+# NPM vs NPX?
+
+NPM : Node package manager (diffrent libraries) & use to dounload diffrent packages (Instalation enviroment)
+NPX : Package created by facebook - it dounload latest version of react everytime
+
+# package.json
+tell to application about diffrent packages and libraries
+
+# Entry Point
+index.js
