@@ -27,3 +27,8 @@ tell to application about diffrent packages and libraries
 
 # Entry Point
 index.js
+
+# JSX
+It is a syntaxt extention of js - it allows to write html in js
+it render the look of component
+
