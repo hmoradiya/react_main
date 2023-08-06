@@ -32,3 +32,5 @@ index.js
 It is a syntaxt extention of js - it allows to write html in js
 it render the look of component
 
+# DOM
+Document object modal
