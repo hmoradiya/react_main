@@ -1,5 +1,5 @@
 import React from 'react'
-import Category from '../../Components/Category'
+import Category from '../../Components/Category/Category'
 
 function Home() {
 
@@ -32,7 +32,7 @@ function Home() {
     ]
 
   return (
-    <div>
+    <div className='container-fluid'>
         <Category categories={categories} />
     </div>
   )
