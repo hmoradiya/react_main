@@ -4,7 +4,6 @@ import { auth, signInWithGooglePopup, signInWithGoogleRedirect, createUserDocs, 
 import FormInput from '../FormInput/FormInput';
 import './SignInForm.scss';
 import Button from '../Button/Button';
-import { UserContext } from '../../Contexts/Contexts';
 
 const formDefField = {
     email: '',
@@ -20,10 +19,6 @@ function SignInForm() {
             const userRef = createUserDocs(results.user)
         }
     }
-
-    const {selectCurrentUser} = useContext(UserContext) 
-
-    const { setCurrentUser } = useContext(UserContext);
 
     useEffect(() => {
         redirectData();
@@ -46,7 +41,6 @@ function SignInForm() {
         e.preventDefault();
         try {
             const { user } = await SignInAuthWithEmailAndPassword(formField.email, formField.password)
-            setCurrentUser(user)
             resetFormField();
         }
         catch(error)
@@ -65,7 +59,7 @@ function SignInForm() {
             } 
         }
     }
-
+   
     const loginGoogle = async () => {
         const { user } = await signInWithGooglePopup();
         const userRef = await createUserDocs(user)
@@ -86,7 +80,7 @@ function SignInForm() {
 
                 <div className='d-flex column-gap-2'>
                     <Button type="submit" label='Sign In' />
-                    <Button handleClick={loginGoogleRedirect} label='Sign In With Google' googleBtn={true} />
+                    <Button handleClick={loginGoogle} label='Sign In With Google' googleBtn={true} />
                 </div>
             </form>
         </div>

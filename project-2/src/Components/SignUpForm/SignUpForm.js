@@ -3,8 +3,6 @@ import { createAuthUserWithEmailAndPassword, createUserDocs } from '../../Utils/
 import FormInput from '../FormInput/FormInput';
 import './SignUpForm.scss';
 import Button from '../Button/Button';
-import { UserContext } from '../../Contexts/Contexts';
-
 
 const formDefField = {
     displayName: '',
@@ -16,8 +14,6 @@ const formDefField = {
 function SignUpForm() { 
 
     const [formField, setFormField] = useState(formDefField);
-
-    const { setCurrentUser } = useContext(UserContext)
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -37,7 +33,6 @@ function SignUpForm() {
         try {
             const displayName = formField.displayName;
             const {user} = await createAuthUserWithEmailAndPassword(formField.email, formField.password)
-            setCurrentUser(user)
             await createUserDocs(user, { displayName })
             resetFormField();
         }
