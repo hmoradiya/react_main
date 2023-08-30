@@ -28,6 +28,5 @@ export const CategoriesProvider = ({children}) => {
     },[])
     
     const value = categories
-    console.log(categories, "cat");
     return <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>
 }
